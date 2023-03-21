@@ -9,7 +9,6 @@ const BlogForm = (props) => {
   const [author, setAuthor] = useState("");
   const [year, setYear] = useState("");
   const [categories, setCategories] = useState("");
-  
 
   console.log(props);
   //instantiate navigator
@@ -26,7 +25,6 @@ const BlogForm = (props) => {
           author: author,
           year: year,
           categories: categories,
-        
         },
         {
           headers: {

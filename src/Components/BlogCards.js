@@ -1,11 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
+
 
 // todo card
 
 const BlogCard = (props) => {
-  console.log(props);
+  
   const { urlEndPoint } = props;
   const { blog } = props;
   const { blogs } = props;
@@ -15,6 +18,10 @@ const BlogCard = (props) => {
   const [title, setTitle] = useState(blog.title);
   const [year, setYear] = useState(blog.year);
   const [isEditing, setIsEditing] = useState(false);
+  const navigate = useNavigate();
+  
+
+ 
 
   const handleDeleteBlog = () => {
     console.log(urlEndPoint);
@@ -42,10 +49,12 @@ const BlogCard = (props) => {
       })
       .then((response) => {
         console.log("Resource updated successfully");
+        navigate("/search")
       })
       .catch((error) => {
         console.error("Error updating resource:", error);
       });
+      
   };
 
   return (
@@ -145,6 +154,7 @@ const BlogCard = (props) => {
           </Card.Footer>
         </Card>
 )})}
+
     </div>
   );
 };

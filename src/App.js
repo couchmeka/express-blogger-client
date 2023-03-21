@@ -55,8 +55,8 @@ function App() {
           element: (
             <BlogCards
               urlEndPoint={urlEndPoint}
-              blogs={blogsList}
               setBlogs = {setBlogs}
+              blogsList = {blogsList}
             />
           ),
         },
