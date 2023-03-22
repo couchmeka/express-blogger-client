@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -83,9 +84,8 @@ const BlogCard = (props) => {
     gridGap: "10px",
    
     }}>
-
-        <Card style={{ width: "18rem", margin: "10px" }} key={blog.id}>
-          <Card.Header>
+        <Card style={{ width: "25rem", margin: "10px" }} key={blog.id}>
+          <Card.Header style= {{color: "blue"}}>
             {!isEditing && <h2>{blog.title}</h2>}
             {isEditing && (
               <input
@@ -98,8 +98,8 @@ const BlogCard = (props) => {
               />
             )}
           </Card.Header>
-          <Card.Body>
-            <Card.Text>
+          <Card.Body style={{color: "black"}}>
+            <Card.Text >
               <p>ID: {blog.id}</p>
               {!isEditing && <p>Text: {blog.text}</p>}
               {isEditing && (
