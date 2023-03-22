@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 
 
+
 // todo card
 
 const BlogCard = (props) => {
-  
+
+
+ 
   const { urlEndPoint } = props;
   const { blog } = props;
-  const { blogs } = props;
   const [author, setAuthor] = useState(blog.author);
   const [categories, setCategories] = useState(blog.categories);
   const [text, setText] = useState(blog.text);
@@ -19,7 +21,23 @@ const BlogCard = (props) => {
   const [year, setYear] = useState(blog.year);
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
-  
+  const [bloglist, setBlogList] = useState([])
+
+  useEffect(() => {
+    const URL = process.env.REACT_APP_URL_ENDPOINT
+    axios
+      .get(`${URL}/blogs/all`)
+      .then(function (response) {
+        console.log(response);
+        setBlogList(response.data.blogs);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }, []);
 
  
 
@@ -59,9 +77,13 @@ const BlogCard = (props) => {
 
   return (
     
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {blogs.map((blog) => {
-        return (
+    <div  style={{ 
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 2fr))",
+    gridGap: "10px",
+   
+    }}>
+
         <Card style={{ width: "18rem", margin: "10px" }} key={blog.id}>
           <Card.Header>
             {!isEditing && <h2>{blog.title}</h2>}
@@ -153,7 +175,7 @@ const BlogCard = (props) => {
             )}
           </Card.Footer>
         </Card>
-)})}
+
 
     </div>
   );

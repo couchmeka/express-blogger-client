@@ -1,5 +1,4 @@
 import BlogCards from "../Components/BlogCards";
-import { Outlet } from "react-router-dom";
 //home page component
 const HomePage = (props) => {
   const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
@@ -10,18 +9,18 @@ const HomePage = (props) => {
   return (
     <div>
       <h1>Full Stack Blog App</h1>
+      
       {blogs.map((item, index) => {
         return (
           <BlogCards
+            blogs={blogs}
             blog={item}
             setBlogs={setBlogs}
-            blogs={blogs}
             key={index}
             urlEndPoint={urlEndPoint}
           />
         );
       })}
-      <Outlet blogsList={blogs}/>
     </div>
   );
 };
