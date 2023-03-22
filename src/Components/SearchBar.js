@@ -32,14 +32,14 @@ const SearchBar = (props) => {
         {searchItems.map((blog, index) => (
           <Card style={{ width: "45rem", margin: "10px" }} key={index} >
             <Card.Body>
-              <Card.Title style={{color: "blue" }}>Title: {blog.title}</Card.Title>
-              <Card.Text style={{color: "black"}}>Text: {blog.text}</Card.Text>
+              <Card.Title style={{color: "blue" }}><b>Title:</b> {blog.title}</Card.Title>
+              <Card.Text style={{color: "black"}}><b>Text:</b> {blog.text}</Card.Text>
               <Card.Footer>
-                <small className="text-muted">Categories: {blog.categories}</small>
+                <small className="text-muted"><b>Categories:</b> {blog.categories}</small>
               </Card.Footer>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">Author: {blog.author}</small>
+              <small className="text-muted"><b>Author:</b> {blog.author}</small>
             </Card.Footer>
           </Card>
         ))}
