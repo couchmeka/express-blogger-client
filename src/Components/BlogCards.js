@@ -79,12 +79,11 @@ const BlogCard = (props) => {
   return (
     
     <div  style={{ 
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 2fr))",
-    gridGap: "10px",
+    display: "flex",
+    flexDirection: "column"
    
     }}>
-        <Card style={{ width: "40rem", margin: "10px" }} key={blog.id}>
+        <Card style={{ width: "45rem", margin: "10px" }} key={blog.id}>
           <Card.Header style= {{color: "blue"}}>
             {!isEditing && <h2>{blog.title}</h2>}
             {isEditing && (
