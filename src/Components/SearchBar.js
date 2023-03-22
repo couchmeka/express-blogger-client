@@ -30,7 +30,7 @@ const SearchBar = (props) => {
       <button>Search</button>
       <div className="card-columns">
         {searchItems.map((blog, index) => (
-          <Card key={index}>
+          <Card style={{ width: "45rem", margin: "10px" }} key={index} >
             <Card.Body>
               <Card.Title style={{color: "blue" }}>Title: {blog.title}</Card.Title>
               <Card.Text style={{color: "black"}}>Text: {blog.text}</Card.Text>
