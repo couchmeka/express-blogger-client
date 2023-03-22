@@ -84,7 +84,7 @@ const BlogCard = (props) => {
     gridGap: "10px",
    
     }}>
-        <Card style={{ width: "25rem", margin: "10px" }} key={blog.id}>
+        <Card style={{ width: "40rem", margin: "10px" }} key={blog.id}>
           <Card.Header style= {{color: "blue"}}>
             {!isEditing && <h2>{blog.title}</h2>}
             {isEditing && (
