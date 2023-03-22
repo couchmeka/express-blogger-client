@@ -45,10 +45,11 @@ const BlogForm = (props) => {
   };
 
   return (
-    <div>
+    <div style={{display: "flex", justifyContent: "center", alignContent: "center" }}>
       <form onSubmit={handleSubmit}>
         <h1>Create Blog </h1>
         <label>Title</label>
+        <br/>
         <input
           type="text"
           onChange={(e) => {
@@ -57,28 +58,34 @@ const BlogForm = (props) => {
         />
         <br />
         <label>Text</label>
+        <br/>
         <textarea
           type="text"
           onChange={(e) => {
             setText(e.target.value);
           }}
         />
-        <br />
+        <br/>
         <label>Author</label>
+        <br/>
         <input
           type="text"
           onChange={(e) => {
             setAuthor(e.target.value);
           }}
         />
-        <label>Year</label>
+        <br/>
+        <label>Year: </label>
+        <br/>
         <input
           type="text"
           onChange={(e) => {
             setYear(e.target.value);
           }}
         />
+        <br/>
         <label>Categories</label>
+        <br/>
         <input
           type="text"
           onChange={(e) => {
