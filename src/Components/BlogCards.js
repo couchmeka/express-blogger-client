@@ -73,7 +73,7 @@ const BlogCard = (props) => {
       .catch((error) => {
         console.error("Error updating resource:", error);
       });
-      
+      window.location.reload(true)
   };
 
   return (
