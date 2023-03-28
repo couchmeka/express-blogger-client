@@ -8,6 +8,8 @@ import Layout from "./Layouts/Layout";
 import axios from "axios";
 import BlogCards from "./Components/BlogCards";
 import SearchBar from "./Components/SearchBar";
+import RegistrationPage from "./Pages/RegistrationPage"
+import LoginPage from "./Pages/LoginPage"
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
@@ -66,7 +68,21 @@ function App() {
             <SearchBar blogs={blogsList} setBlogs = {setBlogs}/>
            )
 
-        }
+        },
+        {
+          path: "registration",
+          element: (
+           <RegistrationPage/>
+          )
+
+       },
+       {
+        path: "login",
+        element: (
+         <LoginPage/>
+        )
+
+     }
       ],
     },
   ]);
